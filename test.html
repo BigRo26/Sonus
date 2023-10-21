@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Spectrogram</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}">
+</head>
+<body>
+<img src="{{url_for('static', filename='/spectrogram.png')}}" alt="image" height="500" width="800">
+<form action="http://localhost:5000/predict">
+  <a href="{{url_for('static', filename='/spectrogram.png')}}" download="spectrogram">
+    <input type="submit" value="Download Spectrogram" style="margin-top: 20px;" onclick="downloadFile()"> 
+  </a>
+</form>
+<script>
+  function downloadFile() {
+     window.open("{{url_for('static', filename='/spectrogram.png')}}")
+  }
+</script>
+</body>
+</html>

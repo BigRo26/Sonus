@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='styles/styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h3>Upload Audio Sample</h3>
+        <div class="drag-area">
+            <div class="icon">
+                <i class="fas fa-images"></i>
+            </div>
+            <span class="header">Select a File</span>
+            <span class="header"> to <span class="button">Process</span></span>
+            <input type="file" hidden>
+            <form action="http://localhost:5000/predict" method="post" enctype="multipart/form-data">
+                <div>
+                <input type="file" name="file">
+                </div>
+                <div>
+                <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
